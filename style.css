@@ -1,0 +1,17 @@
+body {
+  min-height: 100vh;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  background: white;
+  background: url(https://i.redd.it/c3uhsgo1vx541.jpg);
+  background-size: cover;
+}
+
+canvas {
+  border: 30px solid rgba(27, 2, 173, 0.8);
+  border-radius: 10px;
+  width: 800px;
+  height: 500px;
+  background: white;
+}
