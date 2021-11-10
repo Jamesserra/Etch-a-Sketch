@@ -15,9 +15,12 @@ ctx.moveTo(x, y);
 ctx.lineTo(x, y);
 ctx.stroke();
 
+let hue = 0;
+ctx.strokeStyle = `hsl(${hue}, 100%, 50%)`;
 
 function draw({ key }) {
-  console.log(key);
+  hue += 1;
+  ctx.strokeStyle = `hsl(${hue}, 100%, 50%)`;
   ctx.beginPath();
   ctx.moveTo(x,y);
   
@@ -48,4 +51,13 @@ function handleKey(e) {
   }
 }
 
+function clearCanvas() {
+  canvas.classList.add('shake');
+  ctx.clearRect(0, 0, width, height);
+  canvas.addEventListener('animationend', function() {
+    canvas.classList.remove('shake');
+  },{once: true});
+}
+
 window.addEventListener('keydown', handleKey);
+shakeButton.addEventListener("click", clearCanvas);
